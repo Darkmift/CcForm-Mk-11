@@ -65,23 +65,7 @@ $('#invoice_form_submit_btn').click(function(e) {
     //empty previous errors
     $('#errorContianer').empty();
     console.log('Validating...');
-    //nit obj
-    var formObj = {
-        firstname: $('#fname'),
-        lastName: $('#cname'),
-        email: $('#email'),
-        lastName0: $('#cname0'),
-        /**phone!**/
-        address1: $('#adr'),
-        cityname: $('#city'),
-        statecode: $('#state'),
-        zipCode: $('#zip'),
-        /**CC INFO**/
-        ccn: $('#ccn'),
-        cvv: $('cvv'),
-        expirationMonth: $('#expirationMonth'),
-        expirationYear: $('#expirationYear')
-    };
+
     //error ol to add to modal
     var errMsg = $('<ol>');
     var hasErrors = false;
