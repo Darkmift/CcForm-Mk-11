@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DaForm</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+</head>
+
+
+<body>
+  <!-- <form id="invoice_form" method="POST" action="processpayment.api"> -->
+  <form id="invoice_form" method="POST" action="php.php"></form>
+  <input type="hidden" name="elementid" value="[WORKELEMENT]">
+  <input type="hidden" name="pkid" value="[PKID]">
+  <input type="hidden" name="ref" value="[REFERENCE]">
+  <input type="hidden" name="amount" value="[PROCESS AMOUNT]">
+
+  <table border="3" width="100%">
+    <tr>
+      <td align="center">
+        <div align="center">
+          <table align="center" border="1" style="border-collapse:collapse;" width="98%">
+            <tbody>
+              <tr>
+                <td rowspan="2" width="178">
+                  <div align="center">
+                    <table border="0" width="96%">
+                      <tbody>
+                        <tr>
+                          <td><strong><span style="font-family:Arial;">&nbsp;</span><a href="[COMPANY LINK]" target="_blank"><span
+                                  style="font-family:Arial;color:#0645ad;">[COMPANY LINK]</span></a></strong></td>
+                        </tr>
+                        <tr>
+                          <td><span style="font-family:Arial;color:#0645ad;">&nbsp;[COMPANY EMAIL]</span></td>
+                        </tr>
+                        <tr>
+                          <td><span style="font-family:Arial;">&nbsp;[TOLL FREE]</span></td>
+                        </tr>
+                        <tr>
+                          <td><span style="font-family:Arial;">&nbsp;Fax: [COMPANY FAX]</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </td>
+                <td>
+                  <p align="center"><span style="font-size:large;font-family:Arial;">&nbsp;[LOGO]</span></p>
+                </td>
+                <td rowspan="2">
+                  <table align="center" border="0" width="98%">
+                    <tbody>
+                      <!-- <tr>
+                          <td width="2"><span style="font-family:Arial;">&nbsp;</span></td>
+                        </tr>
+                        <tr>
+   
+                        </tr> -->
+                      <tr>
+                        <td align="right" class="auto-style5" width="45%">
+                          <p align="left"><span style="font-family:Arial;">&nbsp;Print Date:</span></p>
+                        </td>
+                        <td class="auto-style4" width="2"><span style="font-family:Arial;">&nbsp;</span></td>
+                        <td class="auto-style6"><span style="font-family:Arial;">[PRINT DATE]</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p align="center"><strong><span style="font-size:x-small;color:#000;font-family:Arial;">US
+                        DOT:&nbsp;[COMPANY
+                        DOT]&nbsp;&nbsp; </span>
+                      <span style="color:#000;font-family:Arial;font-size:x-small;">MC:&nbsp;[COMPANY MC]&nbsp;&nbsp;
+                        STATE
+                        DOT:&nbsp;[CARRIER NUMBER]</span></strong></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- END of LOGO Header section -->
+        <table align="center" border="1" style="margin:5px;border-width:0px; border-collapse:collapse" width="97%" bgcolor="#CCCCCC">
+          <tbody>
+            <tr>
+              <td width="45%" style="border-left:medium none #C0C0C0; border-top:medium none #C0C0C0; border-right-style: none; border-right-width: medium; border-bottom: medium none #808080"
+                bgcolor="#F2F2F2">
+                &nbsp;</td>
+              <td width="9%" style="border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-top:medium none #C0C0C0; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                &nbsp;</td>
+            </tr>
+            <tr>
+              <td width="45%" style="border-left:medium none #C0C0C0; border-top:medium none #C0C0C0; border-right-style: none; border-right-width: medium; border-bottom: medium none #808080"
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; <br> &nbsp; First Name</font>
+              </td>
+              <td width="9%" style="border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-top:medium none #C0C0C0; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; <br> &nbsp; Last Name</font>
+              </td>
+            </tr>
+            <tr>
+              <td width="45%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; </font><label for="fname">
+                  <font face="Arial">
+                    <input id="fname" name="firstname" placeholder="" type="text" size="44%" /></font>
+                </label>
+              </td>
+              <td width="9%" style="border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-right:medium none #808080; border-left-style: none; border-left-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp;
+                  <input id="cname" name="lastName" placeholder="" type="text" size="44%" />
+                </font>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table align="center" border="1" style="border-width:0px; border-collapse:collapse" width="98%" bgcolor="#CCCCCC">
+          <tbody>
+            <tr>
+              <td width="45%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; <br> &nbsp; Email</font>
+              </td>
+              <td width="9%" style="border-top:medium none #C0C0C0; border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-top:medium none #C0C0C0; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; <br> &nbsp; Phone</font>
+              </td>
+            </tr>
+            <tr>
+              <td width="45%" style="border-left:medium none #C0C0C0; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; </font>
+                <label for="email">
+                  <font face="Arial">
+                    <input id="email" name="email" placeholder="" type="text" size="44%" />
+                  </font>
+                </label>
+              </td>
+              <td width="9%" style="border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-right:medium none #808080; border-left-style: none; border-left-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp;
+                  <input id="cname0" name="lastName0" type="tel" size="44%">
+                </font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table align="center" border="1" style="border-width:0px; border-collapse:collapse" width="98%" bgcolor="#CCCCCC">
+          <tbody>
+            <tr>
+              <td width="45%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; <br> &nbsp; Address</font>
+              </td>
+              <td width="9%" style="border-top:medium none #C0C0C0; border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-top:medium none #C0C0C0; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; <br> &nbsp; City</font>
+              </td>
+            </tr>
+            <tr>
+              <td width="45%" style="border-left:medium none #C0C0C0; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp;
+                  <input id="adr" name="address1" placeholder="" type="text" size="44%" /></font>
+              </td>
+              <td width="9%" style="border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-right:medium none #808080; border-left-style: none; border-left-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp;
+                  <input id="city" name="cityname" placeholder="" type="text" size="44%" /></font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table align="center" border="1" style="border-width:0px; border-collapse:collapse" width="98%" bgcolor="#CCCCCC">
+          <tbody>
+            <tr>
+              <td width="45%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                height="23" bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; <br> &nbsp; State</font>
+              </td>
+              <td width="9%" style="border-top:medium none #C0C0C0; border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; "
+                height="23" bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-right:1px none #808080; border-top:1px none #C0C0C0; border-left-style: none; border-left-width: medium; border-bottom: medium none #808080; "
+                height="23" bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; <br> &nbsp; Zip</font>
+              </td>
+            </tr>
+            <tr>
+              <td width="45%" style="border-left:medium none #C0C0C0; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp;
+                  <input id="state" name="statecode" placeholder="" type="text" size="44%" /></font>
+              </td>
+              <td width="9%" style="border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp;
+                  <input id="zip" name="zipCode" placeholder="" type="text" size="44%" /></font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- <table align="center" border="1" style="border-width:0px; border-collapse:collapse" width="98%" bgcolor="#CCCCCC">
+          <tbody>
+            <tr>
+              <td width="45%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; <br> &nbsp; Credit card number</font>
+              </td>
+              <td width="9%" style="border-top:medium none #C0C0C0; border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-right:1px none #808080; border-top:1px none #C0C0C0; border-left-style: none; border-left-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp; <br> &nbsp; CVV</font>
+              </td>
+            </tr>
+            <tr>
+              <td width="45%" style="border-left:medium none #C0C0C0; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp;
+                  <input id="CCN" name="CCN" placeholder="" type="text" size="44%" data-inputmask="'mask': '9999 9999 9999 9999'" /></font>
+              </td>
+              <td width="9%" style="border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+              <td width="45%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp;
+                  <input id="cvv" name="cvv" placeholder="" type="text" size="44%" maxlength="4" /></font>
+              </td>
+            </tr>
+          </tbody>
+        </table> -->
+        <table align="center" border="1" style="border-width:0px; border-collapse:collapse" width="98%" bgcolor="#CCCCCC">
+          <tbody>
+            <!-- <tr>
+              <td width="1%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <!-- <font face="Arial">&nbsp;<br> &nbsp; Month</font> -->
+            <!--</td>
+              <!-- <td width="1%" style="border-right:medium none #808080; border-top:medium none #C0C0C0; border-left-style: none; border-left-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <!-- <font face="Arial">&nbsp; <br> &nbsp; Year</font> -->
+            <!--</td>
+              <td width="70%" style="border-top:medium none #C0C0C0; border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; "
+                bgcolor="#F2F2F2">&nbsp;</td>
+            </tr> -->
+            <!-- <tr>
+              <td width="22%" style="border-left:medium none #C0C0C0; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp;
+                  <!-- <input id="expirationMonth" name="expirationMonth" placeholder="" type="text" size="44%" /> -->
+            <!-- <label for="expirationMonth">Month</label><br>
+                  <select id="expirationMonth" name="expirationMonth" style="margin-left:10px;width:75%;height:25px;">
+                    <option selected value='none'>--Select Month--</option>
+                    <option value='1'>Janaury</option>
+                    <option value='2'>February</option>
+                    <option value='3'>March</option>
+                    <option value='4'>April</option>
+                    <option value='5'>May</option>
+                    <option value='6'>June</option>
+                    <option value='7'>July</option>
+                    <option value='8'>August</option>
+                    <option value='9'>September</option>
+                    <option value='10'>October</option>
+                    <option value='11'>November</option>
+                    <option value='12'>December</option>
+                  </select>
+                </font>
+              </td>
+              <td width="22%" style="border-left:medium none #C0C0C0; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080;"
+                bgcolor="#F2F2F2">
+                <font face="Arial">&nbsp;
+                  <!-- <input id="expirationMonth" name="expirationMonth" placeholder="" type="text" size="44%" /> -->
+            <!-- <label for="expirationYear">Year</label><br>
+                  <select id="expirationYear" name="expirationYear" style="margin-left:5px;width:75%;height:25px;">
+                    <option value='none'>--Select year--</option>
+                  </select>
+                </font>
+              </td>
+              <!-- <td width="9%" style="border-bottom:medium none #808080; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                  bgcolor="#F2F2F2">&nbsp;</td> -->
+            <!-- <td width="45%" style="border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+              </td>
+            </tr> -->
+            <tr>
+              <td colspan=3 style="width:70%;border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2">
+                <br>
+                <span style="margin-left:10px;">Card Number:</span><br><br>
+                <input style="margin-left:10px;" class="digits" style="border-top:2px solid white;" maxlength="4" type="text"
+                  id=digit1 name="digit1">&nbsp;-
+                <input class="digits" style="border-top:2px solid white;" maxlength="4" type="text" id=digit2 name="digit2">&nbsp;-
+                <input class="digits" style="border-top:2px solid white;" maxlength="4" type="text" id=digit3 name="digit3">&nbsp;-
+                <input class="digits" style="border-top:2px solid white;" maxlength="4" type="text" id=digit4 name="digit4">
+                <span id="type"></span>
+
+                <span style="margin-left:20px;">Exp. Date:<span>
+                    <input class="digits" style="border-top:2px solid white;" maxlength="2" type="text" id=dateMonth
+                      name="dateMonth">&nbsp;/
+                    <input class="digits" style="border-top:2px solid white;" maxlength="2" type="text" id=dateYear
+                      name="dateYear">
+                    <span style="margin-left:20px;">CVV:<span>
+                        <input style="width:75px;" id="cvv" name="cvv" placeholder="" type="text" maxlength="4" /></font>
+              </td>
+            </tr>
+            <tr>
+              <td width="99%" style="border-left:medium none #C0C0C0; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom: medium none #808080; "
+                bgcolor="#F2F2F2" colspan="3">
+                <br>
+                <br>
+                <font face="Arial">
+                  <button id="invoice_form_submit_btn" class="btn" type="submit">Submit Payment [INVOICE AMOUNT]</button>
+                </font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+  </form>
+  <!-- MODAL START -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="errorContianer"></div>
+    </div>
+  </div>
+  <!-- MODAL END -->
+  <script src="cardValidate.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

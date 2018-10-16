@@ -77,15 +77,27 @@ body {
 
 /***/
 
+form {
+    text-align: left!important;
+    margin: 5px 30px!important;
+    font-size: 16px;
+    line-height: 18px;
+}
+
 textarea,
 input,
 select {
     outline: none;
-    border: 1px solid #B0AAAA!important;
+    border: 1px solid #D2CACA!important;
     border-color: transparent;
     background-color: white;
     color: black;
     padding: 3px;
+}
+
+#cardTypeOut {
+    background-color: rgb(230, 223, 223);
+    font-weight: bold;
 }
 
 .digits {
@@ -97,11 +109,11 @@ select {
 }
 
 .error {
-    color: red;
+    color: red!important;
 }
 
 .success {
-    color: green;
+    color: green!important;
 }
 
 ::-webkit-input-placeholder {
