@@ -1,28 +1,9 @@
 var cl = console.log.bind(console);
 cl('online')
 
-//add years to select
-$(document).ready(function () {
-    console.log("doc ready!");
-    var x = new Date();
-    var currentYear = x.getFullYear();
-    for (let index = 0; index < 50; index++) {
-        var optionYear = $('<option>', {
-            value: currentYear + index,
-            text: currentYear + index
-        })
-        $('#expirationYear').append(optionYear)
-    }
-
-    //add masking rule to phone
-    $(":input").inputmask();
-    formObj.phone.inputmask({
-        "mask": "(999) 999-9999"
-    });
-});
-
 //init objform for ease of use
 var formObj = {
+    self: $('#invoice_form'),
     firstname: $('#fname'),
     lastName: $('#cname'),
     email: $('#email'),
@@ -35,8 +16,32 @@ var formObj = {
     ccn: $('#ccn'),
     cvv: $('#cvv'),
     expirationMonth: $('#expirationMonth'),
-    expirationYear: $('#expirationYear')
+    expirationYear: $('#expirationYear'),
+    submitBtn: $('#invoice_form_submit_btn')
 };
+
+//add years to select
+$(document).ready(function () {
+    console.log("doc ready!");
+
+    var x = new Date();
+    var currentYear = x.getFullYear();
+    for (let index = 0; index < 50; index++) {
+        var optionYear = $('<option>', {
+            value: currentYear + index,
+            text: currentYear + index
+        })
+        formObj.expirationYear.append(optionYear)
+    }
+
+    //add masking rule to phone
+    $(":input").inputmask();
+    formObj.phone.inputmask({
+        "mask": "(999) 999-9999"
+    });
+});
+
+
 
 //red if empty input on blur (CVV excluded)
 $('input').blur(function (e) {
@@ -93,6 +98,27 @@ formObj.zipCode.on('keyup keypress keydown change', function () {
 formObj.zipCode.blur(function (e) {
     e.preventDefault();
     $(this).val().length < 5 ? redGreen($(this), false) : redGreen($(this), true);
+});
+
+//validate on submit
+
+formObj.submitBtn.click(function (e) {
+    e.preventDefault();
+    var valid = true;
+    // var element = $(element);
+
+    $('input,select').each(function (index, element) {
+        cl($(this).val())
+        $(this).blur()
+        if (!$(this).hasClass('successsGreen') && $(this).attr('type') != 'hidden')
+            valid = false,
+            redGreen($(this), false);
+    });
+    if (valid)
+        cl('valid form'),
+        formObj.self.submit()
+    else
+        cl('error cannot submit')
 });
 
 ////HELPERs
