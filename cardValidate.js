@@ -83,14 +83,12 @@ $('#expirationYear,#expirationMonth').change(function (event) {
     var mm = $('#expirationMonth');
     var yy = $('#expirationYear');
     var validDate = true;
-    var month;
-    if (mm.val() < 10) {
-        month = String(0 + mm.val());
-    }
+    var month = mm.val() < 10 ? 0 + mm.val() : mm.val();
 
     var expDate = new Date();
     expDate = expDate.setFullYear(yy.val(), month, 1)
     var today = new Date();
+
     if (
         isNaN(expDate) ||
         expDate < today
