@@ -49,16 +49,6 @@ $('input').blur(function (e) {
         redGreen($(this), true);
 });
 
-// formObj.cvv.click(function (e) {
-//     e.preventDefault();
-//     cl($(this).val().length)
-//     if ($(this).val().length < 3)
-//         redGreen($(this), false);
-//     else
-//         redGreen($(this), true);
-// });
-
-
 ///check for number length
 formObj.phone.blur(function (event) {
     cl($(this).val());
@@ -97,6 +87,12 @@ formObj.zipCode.on("keypress keyup blur", function (e) {
 //limit input length
 formObj.zipCode.on('keyup keypress keydown change', function () {
     limitText(this, 5)
+});
+
+//limit input length
+formObj.zipCode.blur(function (e) {
+    e.preventDefault();
+    $(this).val().length < 5 ? redGreen($(this), false) : redGreen($(this), true);
 });
 
 ////HELPERs
