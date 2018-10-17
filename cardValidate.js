@@ -108,4 +108,8 @@ $('#expirationYear,#expirationMonth').change(function (event) {
 
 });
 
+formObj.cvv.blur(function (e) {
+    e.preventDefault();
+
+});
 /////////////

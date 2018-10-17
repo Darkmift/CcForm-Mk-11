@@ -33,14 +33,30 @@ var formObj = {
     zipCode: $('#zip'),
     /**CC INFO**/
     ccn: $('#ccn'),
-    cvv: $('cvv'),
+    cvv: $('#cvv'),
     expirationMonth: $('#expirationMonth'),
     expirationYear: $('#expirationYear')
 };
 
-///disable autocoplete
-// $('invoice_form').attr("autocomplete", "off");
+//red if empty input on blur (CVV excluded)
+$('input').blur(function (e) {
+    e.preventDefault();
+    if ($(this).attr('id') != 'cvv')
+        $(this).val().length === 0 ? redGreen($(this), false) : redGreen($(this), true);
+    else if ($(this).val().length < 3)
+        redGreen($(this), false);
+    else
+        redGreen($(this), true);
+});
 
+// formObj.cvv.click(function (e) {
+//     e.preventDefault();
+//     cl($(this).val().length)
+//     if ($(this).val().length < 3)
+//         redGreen($(this), false);
+//     else
+//         redGreen($(this), true);
+// });
 
 
 ///check for number length
@@ -53,7 +69,6 @@ formObj.phone.blur(function (event) {
         redGreen($(this), true);
 });
 
-
 ///Email input code
 formObj.email.blur(function (e) {
     e.preventDefault();
@@ -63,9 +78,26 @@ formObj.email.blur(function (e) {
     else
         redGreen($(this), false);
 });
+formObj.statecode.blur(function (e) {
+    e.preventDefault();
+    cl($(this).val())
+    if ($(this).val() != 'none')
+        redGreen($(this), true);
+    else
+        redGreen($(this), false);
+});
 
-
-
+//allow numbers only in zip(prevent ./- etc)
+formObj.zipCode.on("keypress keyup blur", function (e) {
+    $(this).val($(this).val().replace(/[^\d].+/, ""));
+    if ((e.which < 48 || e.which > 57)) {
+        e.preventDefault();
+    }
+});
+//limit input length
+formObj.zipCode.on('keyup keypress keydown change', function () {
+    limitText(this, 5)
+});
 
 ////HELPERs
 //validate email format
@@ -81,5 +113,16 @@ function redGreen(input, correct) {
     } else {
         input.removeClass("successsGreen"),
             input.addClass("errorRed");
+    }
+}
+//limit input lenght
+function limitText(field, maxChar) {
+    var ref = $(field),
+        val = ref.val();
+    if (val.length >= maxChar) {
+        ref.val(function () {
+            console.log(val.substr(0, maxChar))
+            return val.substr(0, maxChar);
+        });
     }
 }

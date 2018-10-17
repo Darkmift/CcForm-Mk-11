@@ -109,7 +109,7 @@
                     <br> City: <input style="width:200px;" type="text" id=city name="cityname" placeholder=" Type City here">
                     State:
                     <select id="state" name="statecode">
-                      <option value="default"></option>
+                      <option selected value="none"></option>
                       <option value="AL">AL</option>
                       <option value="AK">AK</option>
                       <option value="AR">AR</option>
@@ -163,8 +163,7 @@
                       <option value="WY">WY</option>
                     </select>
                     &nbsp;&nbsp;&nbsp;Zip:
-                    <input class="digits" style="border-top:2px solid white;width:100px;" maxlength="5" type="text" id=zip
-                      name="zipCode">
+                    <input class="digits" style="border-top:2px solid white;width:100px;" type="number" id=zip name="zipCode">
                     <br><br>
                     Phone:<input class="digits" style="border-top:2px solid white;width:200px;" type="text" id=phone
                       name="phone" placeholder="(999) 999-9999">
@@ -207,7 +206,7 @@
                     </select>
                     <!--  -->
                     CVV:
-                    <input class="digits" style="border-top:2px solid white;" maxlength="2" type="text" id=cvv name="cvv">
+                    <input class="digits" style="border-top:2px solid white;" maxlength="4" type="text" id=cvv name="cvv">
                     <br><br>
                     Card Type:
                     <input class="readonly" type="text" id="cardTypeOut" readonly>
